@@ -5,7 +5,5 @@
  * @Project: WeatherStation
  * @Filename: script.js
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-11-30T10:12:08+01:00
+ * @Last modified time: 2017-11-30T10:18:54+01:00
  */
-
-dsuoiaseuusf
