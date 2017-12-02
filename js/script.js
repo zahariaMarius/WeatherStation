@@ -5,7 +5,7 @@
  * @Project: WeatherStation
  * @Filename: script.js
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-11-30T12:56:00+01:00
+ * @Last modified time: 2017-12-02T14:50:03+01:00
  */
 
 //call the function that get the weather data
@@ -27,8 +27,7 @@ $.ajax({
 .done(function(data) {
 	console.log("success");
 	console.log(data);
-	console.log(data[105]);
-	//call main function that fill all DOM
+	console.log(data[105])
 })
 .fail(function(error) {
 	console.log(error);
