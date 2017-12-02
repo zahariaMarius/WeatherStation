@@ -1,9 +1,20 @@
+/**
+ * @Author: Zaharia Laurentiu Jr Marius
+ * @Date:   2017-11-30T09:27:10+01:00
+ * @Email:  laurentiu.zaharia@edu.itspiemonte.it
+ * @Project: WeatherStation
+ * @Filename: style.css
+ * @Last modified by:   Zaharia Laurentiu Jr Marius
+ * @Last modified time: 2017-12-02T19:05:49+01:00
+ */
+
+
 
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-} 
+}
 body{
 	width: 100%;
 	margin: 0 auto;
@@ -57,4 +68,38 @@ body{
 	margin-right: 100px;
 	margin-top: -20px;
 	float: right;
+}
+
+.nationFlag {
+	width: 5%;
+}
+
+.accordion {
+	margin: 15px auto;
+	width: 90%;
+}
+
+.headerAccordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 9px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 2s;
+}
+
+.headerAccordion.active, .headerAccordion:hover {
+    background-color: #ccc;
+}
+
+.bodyAccordion {
+    padding: 0 9px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 2s ease-out;
 }
