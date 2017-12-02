@@ -1,15 +1,49 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>WeatherStation</title>
-		<!-- JQuery CDN -->
-		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-		<!-- JQuery CDN -->
-	</head>
-	<body>fdsf
+<head>
+	<meta charset="utf-8">
+	<title>weather-station</title>
+	<meta name="author" content="Group one">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- JQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<!-- JQuery CDN -->
+	<!--[if lt IE 9]>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+ 	<![endif]-->
+</head>
+<body>
+	<header>
+		<div id="divHeader">
+			<h1 id="title">Real Time Weather</h1>
+		</div>
+	</header>
 
-		<script src="jquery-ajax-progress/js/jquery.ajax-progress.js" charset="utf-8"></script>
-		<script src="js/script.js" charset="utf-8"></script>
-	</body>
+	<div id="filter">
+		<div id="div-station-name">
+			<h3>Station name</h3>
+			<input type="text" name="station-name" id="input-station-name">
+		</div>
+		<div>
+			<h3>Country</h3>
+				<select id="select-country">
+					<option value="">-</option>
+					<option value="01">France</option>
+					<option value="02">Italy</option>
+					<option value="03">Switzerland</option>
+				</select>
+		</div>
+
+		<div id="date">
+			<p>20-11-2017</p>
+		</div>
+
+	</div>
+
+	<!-- cuastomized script  -->
+	<script src="jquery-ajax-progress/js/jquery.ajax-progress.js" charset="utf-8"></script>
+	<script src="js/script.js" charset="utf-8"></script>
+	<!-- cuastomized script  -->
+</body>
 </html>

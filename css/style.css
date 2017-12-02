@@ -1,9 +1,60 @@
-/**
- * @Author: Zaharia Laurentiu Jr Marius
- * @Date:   2017-11-30T09:27:10+01:00
- * @Email:  laurentiu.zaharia@edu.itspiemonte.it
- * @Project: WeatherStation
- * @Filename: style.css
- * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-11-30T09:27:10+01:00
- */
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} 
+body{
+	width: 100%;
+	margin: 0 auto;
+   	font-family: 'Calibri', sans-serif;
+}
+
+
+#divHeader{
+	color: #fff;
+	background-color: #001f4d;
+	height: 100px;
+	padding-left: 10px;
+}
+
+#title{
+	font-size: 70px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#filter{
+	margin-top: 30px;
+	padding-top: 13px;
+	margin-left: 5%;
+	width: 90%;
+	color: #fff;
+	background-color: #0066ff;
+	height: 70px;
+	padding-left: 10px;
+}
+
+
+#div-station-name{
+	float: left;
+	margin-left: 15px;
+	margin-right: 20px;
+}
+
+#input-station-name{
+	margin-top: 5px;
+	width: 120px;
+}
+
+#select-country{
+	margin-top: 5px;
+	width: 120px;
+}
+
+#date{
+	margin-right: 100px;
+	margin-top: -20px;
+	float: right;
+}

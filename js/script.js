@@ -5,11 +5,11 @@
  * @Project: WeatherStation
  * @Filename: script.js
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-12-02T14:50:03+01:00
+ * @Last modified time: 2017-12-02T15:16:21+01:00
  */
 
 //call the function that get the weather data
-GetApiData();
+getApiData();
 
 /**
  * [getApiData get all json weather data from API]
@@ -20,9 +20,6 @@ $.ajax({
 	url: 'https://www.torinometeo.org/api/v1/realtime/data/',
 	type: 'GET',
 	dataType: 'JSON',
-	progress: function(e) {
-		//call the function that display the loading page
-	}
 })
 .done(function(data) {
 	console.log("success");
