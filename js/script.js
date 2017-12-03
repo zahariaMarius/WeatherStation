@@ -5,7 +5,7 @@
  * @Project: WeatherStation
  * @Filename: script.js
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-12-02T20:06:05+01:00
+ * @Last modified time: 2017-12-03T14:15:04+01:00
  */
 
 /**
@@ -142,6 +142,7 @@ function craeteHeaderAccordion(singleWeatherData) {
  * @param  {[Object]} singleWeatherData [object that contain sigle weather data]
  * @return {[type]}                   [body div]
  */
+
 function createBodyAccordion(singleWeatherData) {
 	/**
 	 * [bodyAccordionDiv create bodyAccordionDiv that contain the descriptions]
@@ -179,7 +180,6 @@ function getWeatherIcon(singleWeatherData) {
 		return $('<img></img>').addClass('weatherIcon').attr('src', singleWeatherData.weather_icon.icon);
 	}
 }
-
 
 //call the function that get the weather data
 getApiWeatherData();
