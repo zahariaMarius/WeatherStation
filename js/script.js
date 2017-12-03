@@ -5,7 +5,7 @@
  * @Project: WeatherStation
  * @Filename: script.js
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-12-03T14:15:04+01:00
+ * @Last modified time: 2017-12-03T14:21:37+01:00
  */
 
 /**
@@ -99,6 +99,9 @@ function createAccordion(singleWeatherData) {
 	accordionDiv.append(headerAccordionDiv, bodyAccordionDiv);
 	//append accordion to container
 	accordionContainer.append(accordionDiv);
+
+	//call function that apply animation to accordion
+	applyAccordionAnimation();
 }
 
 /**
@@ -183,4 +186,3 @@ function getWeatherIcon(singleWeatherData) {
 
 //call the function that get the weather data
 getApiWeatherData();
-applyAccordionAnimation();
