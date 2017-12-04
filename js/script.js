@@ -5,8 +5,14 @@
  * @Project: WeatherStation
  * @Filename: script.js
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-12-03T14:26:18+01:00
+ * @Last modified time: 2017-12-04T21:16:30+01:00
  */
+
+/**
+ * [selectedItem array that contain all opened accordion and it's heigth]
+ * @type {Array}
+ */
+var selectedItem = [];
 
 /**
  * [getApiData get all json weather data from API]
@@ -21,7 +27,9 @@ function getApiWeatherData() {
 	.done(function(weatherData) {
 		console.log("success");
 		console.log(weatherData);
+		$('#accordionContainer').empty();
 		createAccordions(weatherData);
+		addEventListenerToAccordion();
 	})
 	.fail(function(error) {
 		console.log(error);
@@ -32,6 +40,8 @@ function getApiWeatherData() {
 	.always(function() {
 		console.log("ajax call complete");
 	});
+
+	var refreshData = setTimeout(getApiWeatherData, 15000);
 }
 
 /**
@@ -52,6 +62,18 @@ function applyAccordionAnimation() {
 			}
 		}
 	}
+}
+
+/**
+ * [addEventListenerToAccordion function that add the event listener to all accordion, and save the body heigth if open]
+ */
+function addEventListenerToAccordion() {
+	$('.accordion').click(function (e){
+		var index = $(this).index('.accordion');
+		var height = $('.bodyAccordion')[index].style.maxHeight;
+		selectedItem[index] = height;
+		console.log(selectedItem);
+	});
 }
 
 /**
@@ -84,6 +106,7 @@ function createAccordion(singleWeatherData) {
 	 * @type {[type]}
 	 */
 	var accordionDiv = $('<div></div>').addClass('accordion')
+
 	/**
 	 * [headerAccordionDiv is the header of accordion]
 	 * @type {[type]}
@@ -99,6 +122,13 @@ function createAccordion(singleWeatherData) {
 	accordionDiv.append(headerAccordionDiv, bodyAccordionDiv);
 	//append accordion to container
 	accordionContainer.append(accordionDiv);
+	//save accordionDiv index
+	var accordionDivIndex = accordionDiv.index('.accordion');
+
+	//check if the accordion was open, if true create it open
+	if (checkIfAccordionIsOpen(accordionDivIndex)) {
+		bodyAccordionDiv.css('max-height', selectedItem[accordionDivIndex]);
+	}
 
 	//call function that apply animation to accordion
 	applyAccordionAnimation();
@@ -152,6 +182,10 @@ function createBodyAccordion(singleWeatherData) {
 	 * @type {[type]}
 	 */
 	var bodyAccordionDiv = $('<div></div>').addClass('bodyAccordion');
+	bodyAccordionDiv.html("Some text and markup")
+
+	//var prova = document.getElementsByClassName('bodyAccordion');
+
 	return bodyAccordionDiv;
 }
 
@@ -175,13 +209,30 @@ function getFlagImage(singleWeatherData) {
 
 /**
  * [getWeatherIcon function that return the img element containing weather icon]
- * @param  {[type]} singleWeatherData [object that contain sigle weather data]
+ * @param  {[Objec]} singleWeatherData [object that contain sigle weather data]
  * @return {[type]}                   [description]
  */
 function getWeatherIcon(singleWeatherData) {
 	if ((singleWeatherData.hasOwnProperty("weather_icon")) && (singleWeatherData.weather_icon != null)) {
 		return $('<img></img>').addClass('weatherIcon').attr('src', singleWeatherData.weather_icon.icon);
 	}
+}
+
+/**
+ * [checkIfAccordionIsOpen function that control if accordio was open, if true remain open]
+ * @param  {[Int]} accordionIndex [index of created accordion]
+ * @return {[type]}                [description]
+ */
+function checkIfAccordionIsOpen(accordionIndex) {
+	var flag = false;
+	for (var index in selectedItem) {
+		if (selectedItem.hasOwnProperty(index)) {
+			if (accordionIndex == index) {
+				flag = true;
+			}
+		}
+	}
+	return flag;
 }
 
 //call the function that get the weather data
