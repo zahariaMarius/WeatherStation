@@ -5,7 +5,7 @@
  * @Project: WeatherStation
  * @Filename: style.css
  * @Last modified by:   Zaharia Laurentiu Jr Marius
- * @Last modified time: 2017-12-03T23:39:32+01:00
+ * @Last modified time: 2017-12-07T11:44:58+01:00
  */
 
 
@@ -57,18 +57,21 @@ body{
 #input-station-name{
 	margin-top: 5px;
 	width: 120px;
+	height: 20px;
 }
 
 #select-country{
 	margin-top: 5px;
 	width: 120px;
+	height: 20px;
 }
 
-#date{
+#divDate{
 	margin-right: 100px;
 	margin-top: -20px;
 	float: right;
 }
+
 
 .nationFlag {
 	width: 5%;
@@ -96,10 +99,30 @@ body{
     background-color: #ccc;
 }
 
+.temperature{
+	float: right;
+}
+
+.weatherIcon{
+	float: right;
+	width: 3%;
+}
+
 .bodyAccordion {
     padding: 0 9px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 2s ease-out;
+}
+
+.webcamImg{
+	height: 200px;
+	width: 200px;
+	margin-top: 1%;
+	margin-left: 40%;
+}
+
+.nationName {
+	display: none;
 }
