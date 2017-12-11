@@ -1,0 +1,64 @@
+/**
+ * @Author: Zaharia Laurentiu Jr Marius
+ * @Date:   2017-12-08T16:58:10+01:00
+ * @Email:  laurentiu.zaharia@edu.itspiemonte.it
+ * @Project: WeatherStation
+ * @Filename: slideshowScript.js
+ * @Last modified by:   Zaharia Laurentiu Jr Marius
+ * @Last modified time: 2017-12-08T18:03:48+01:00
+ */
+
+
+var timeout;
+
+
+ /**
+  * [createSlideshow function that create the slideshow]
+  * @param  {[Object]} singleWeatherData [object that contain sigle weather data]
+  * @return {[type]}                   [return the slideshow element]
+  */
+ function getSlideshow(singleWeatherData) {
+ 	var slideshowContainer = $('<div></div>').addClass('slideshow-container');
+ 	var meteoGrammerImage = getMeteoGrammerImage(singleWeatherData);
+ 	var WebcamImage = getWebcamImage(singleWeatherData);
+ 	var stationImage = getStationImage(singleWeatherData);
+ 	var slideshowImages = [meteoGrammerImage, WebcamImage, stationImage];
+ 	for (var item in slideshowImages) {
+ 		if (slideshowImages.hasOwnProperty(item)) {
+ 			var slideDiv = $('<div></div>').addClass('slide fade');
+ 			slideDiv.append(slideshowImages[item].addClass('slideshowImage'));
+ 			slideshowContainer.append(slideDiv);
+ 		}
+ 	}
+ 	var prevButton = $('<a></a>').addClass('prev').html('&#10094;').click(function(event) { nextSlide(-1) });
+ 	var nextButton = $('<a></a>').addClass('next').html('&#10095;').click(function(event) { nextSlide(1) });
+ 	slideshowContainer.append(prevButton, nextButton);
+ 	return slideshowContainer;
+ }
+
+ /**
+  * [nextSlide function that clear the setTimeout and display the next o prev slide]
+  * @param  {[Int]} increment [description]
+  * @return {[type]}   [description]
+  */
+ function nextSlide(increment) {
+ 	clearTimeout(timeout);
+ 	applySlideshowAnimation(slideIndex += increment);
+ }
+
+ /**
+  * [showSlides function that increme the slides and show it automatic]
+  * @param  {[Int]} increment [description]
+  * @return {[type]}   [description]
+  */
+ function applySlideshowAnimation(increment) {
+ 	var i;
+ 	var slides = document.getElementsByClassName("slide");
+ 	if (increment > slides.length) {slideIndex = 1}
+ 	if (increment < 1) {slideIndex = slides.length}
+ 	for (i = 0; i < slides.length; i++) {
+ 		slides[i].style.display = "none";
+ 	}
+ 	slides[slideIndex-1].style.display = "block";
+ 	timeout = setTimeout(function(){ nextSlide(1) }, 60000);
+ }
