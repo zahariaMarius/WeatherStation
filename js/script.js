@@ -136,7 +136,6 @@ function craeteHeaderAccordion(singleWeatherData) {
 			createBodyAccordionEventListener($(this), singleWeatherData);
 		}
 		applyBodyAccordionAnimation($(this));
-		applySlideshowAnimation(0);
 	});
 	return headerAccordionDiv;
 }
@@ -165,6 +164,7 @@ function createBodyAccordionEventListener(header, singleWeatherData) {
 	console.log(index);
 	var bodyAccordionDiv = createBodyAccordion(singleWeatherData);
 	$('.accordion')[index].append(bodyAccordionDiv[0]);
+	applySlideshowAnimation(0);
 }
 
 /**

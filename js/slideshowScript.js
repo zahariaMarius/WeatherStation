@@ -60,5 +60,5 @@ var timeout;
  		slides[i].style.display = "none";
  	}
  	slides[slideIndex-1].style.display = "block";
- 	timeout = setTimeout(function(){ nextSlide(1) }, 60000);
+ 	timeout = setTimeout(function(){ nextSlide(1) }, 5000);
  }
