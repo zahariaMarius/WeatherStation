@@ -8,53 +8,6 @@
  * @Last modified time: 2017-12-07T12:22:43+01:00
  */
 
-//prova push da ubuntu bitch
-
- // $("#input-station-name").on("keyup", function() {
- //   var value = $(this).val().toLowerCase();
- //   $(".stationName").filter(function() {
-	//    //console.log($(this).index(".headerAccordion"));
-	//    //$(".accordion").toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	//  //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-	//  //console.log($(this).index('.header'));
-	//  if ($(this).text().toLowerCase().indexOf(value) > -1) {
-	//  	console.log("index: " + $(this).index('.headerAccordion'));
-	// 	var a = $(this).index('.headerAccordion');
-	// 	$('.accordion').eq(a).show();
-	// 	//$('.accordion')[a].toggle($(this).text().toLowerCase().indexOf(value) > -1);
-	// }else {
-	// 	var a = $(this).index('.headerAccordion');
-	// 	$('.accordion').eq(a).hide();
-	// }
-	//  //console.log("cazzo");
-	//  //console.log($(this).text().toLowerCase().indexOf(value));
- // });
- // });
- //
- // $("#select-country").on("change", function() {
- //   var value = $(this).val().toLowerCase();
- //   console.log(value);
- //   $(".headerAccordion").filter(function() {
-	//   //console.log($(this).index(".headerAccordion"));
-	//   //$(".accordion").toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	// //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-	// //console.log($(this).index('.header'));
-	// if ($(this).text().toLowerCase().indexOf(value) > -1) {
-	//    console.log("index: " + $(this).index('.headerAccordion'));
-	//    var a = $(this).index('.headerAccordion');
-	//    $('.accordion').eq(a).show();
-	//    //$('.accordion')[a].toggle($(this).text().toLowerCase().indexOf(value) > -1);
- //   }else {
-	//    console.log("nessuno");
-	//    var a = $(this).index('.headerAccordion');
-	//    $('.accordion').eq(a).hide();
- //   }
-	// //console.log("cazzo");
-	// //console.log($(this).text().toLowerCase().indexOf(value));
- // });
- // });
-
-
 
 /**
  * [selectedItem array that contain all opened accordion and it's heigth]
