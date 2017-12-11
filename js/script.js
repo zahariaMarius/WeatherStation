@@ -119,7 +119,7 @@ function craeteHeaderAccordion(singleWeatherData) {
 
 	var temperature = $('<p>' +  checkIfNull(temperature,singleWeatherData.temperature) + '</p>');
 	temperature.addClass('temperature');
-	formatTemp(singleWeatherData.temperature, temperature)
+	formatTemp(singleWeatherData.temperature, temperature);
 
 	var temperatureMax = checkIfNull(temperatureMax,singleWeatherData.temperature_max);
 	var temperatureMin = checkIfNull(temperatureMin,singleWeatherData.temperature_min);
@@ -155,7 +155,7 @@ function checkIfBodyAccordionNotExist(header) {
 
 /**
 * [createBodyAccordionEventListener function that create a body of the accordion header clicked and append it to accordion]
-* @param  {[type]} header            [header clicked]
+* @param  {jQuery|HTMLElement} header            [header clicked]
 * @param  {[Object]} singleWeatherData [single weather object]
 * @return {[type]}                   [description]
 */

@@ -57,7 +57,4 @@
  	}
  	slides[slideIndex-1].style.display = "block";
  	var timeout = setTimeout(function(){ nextSlide(1, slideshowContainer, timeout) }, slideTime);
-
-    var resetTime = function() 
-
  }
