@@ -8,10 +8,6 @@
  * @Last modified time: 2017-12-08T18:03:48+01:00
  */
 
-
-var timeout;
-
-
  /**
   * [createSlideshow function that create the slideshow]
   * @param  {[Object]} singleWeatherData [object that contain sigle weather data]
@@ -30,8 +26,8 @@ var timeout;
  			slideshowContainer.append(slideDiv);
  		}
  	}
- 	var prevButton = $('<a></a>').addClass('prev').html('&#10094;').click(function(event) { nextSlide(-1) });
- 	var nextButton = $('<a></a>').addClass('next').html('&#10095;').click(function(event) { nextSlide(1) });
+ 	var prevButton = $('<a></a>').addClass('prev').html('&#10094;').click(function(event) { nextSlide(-1, slideshowContainer) });
+ 	var nextButton = $('<a></a>').addClass('next').html('&#10095;').click(function(event) { nextSlide(1, slideshowContainer) });
  	slideshowContainer.append(prevButton, nextButton);
  	return slideshowContainer;
  }
@@ -41,9 +37,9 @@ var timeout;
   * @param  {[Int]} increment [description]
   * @return {[type]}   [description]
   */
- function nextSlide(increment) {
+ function nextSlide(increment, slideshowContainer, timeout) {
  	clearTimeout(timeout);
- 	applySlideshowAnimation(slideIndex += increment);
+ 	applySlideshowAnimation(slideIndex += increment, slideshowContainer, 5000);
  }
 
  /**
@@ -51,14 +47,17 @@ var timeout;
   * @param  {[Int]} increment [description]
   * @return {[type]}   [description]
   */
- function applySlideshowAnimation(increment) {
+ function applySlideshowAnimation(increment, slideshowContainer, slideTime) {
  	var i;
- 	var slides = document.getElementsByClassName("slide");
+ 	var slides = slideshowContainer.children('.slide');
  	if (increment > slides.length) {slideIndex = 1}
  	if (increment < 1) {slideIndex = slides.length}
  	for (i = 0; i < slides.length; i++) {
  		slides[i].style.display = "none";
  	}
  	slides[slideIndex-1].style.display = "block";
- 	timeout = setTimeout(function(){ nextSlide(1) }, 5000);
+ 	var timeout = setTimeout(function(){ nextSlide(1, slideshowContainer, timeout) }, slideTime);
+
+    var resetTime = function() 
+
  }

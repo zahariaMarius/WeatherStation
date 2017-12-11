@@ -164,7 +164,9 @@ function createBodyAccordionEventListener(header, singleWeatherData) {
 	console.log(index);
 	var bodyAccordionDiv = createBodyAccordion(singleWeatherData);
 	$('.accordion')[index].append(bodyAccordionDiv[0]);
-	applySlideshowAnimation(0);
+	var slideshowContainer = bodyAccordionDiv.children('.slideshow-container');
+	console.log(slideshowContainer);
+	applySlideshowAnimation(0, slideshowContainer, 5000);
 }
 
 /**
